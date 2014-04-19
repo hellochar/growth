@@ -29,6 +29,28 @@
 		"tags" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 1180.0, 90.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 957.0, 333.0, 20.0, 20.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-32",
@@ -87,13 +109,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.0,
 					"id" : "obj-23",
-					"linecount" : 16,
+					"linecount" : 17,
 					"maxclass" : "o.message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 769.5, 1104.963623, 110.0, 209.0 ],
-					"text" : "/button/1/down false \n/button/1/up true \n/button/2/down false \n/button/2/up true \n/button/3/down false \n/button/3/up true \n/button/4/down false \n/button/4/up true \n/button/5/down false \n/button/5/up true \n/button/6/down false \n/button/6/up true \n/button/7/down false \n/button/7/up true \n/button/8/down false \n/button/8/up true \n",
+					"patching_rect" : [ 769.5, 1104.963623, 110.0, 222.0 ],
+					"text" : "/button/1/down false \n/button/1/up true \n/button/2/released \n/button/2/down false \n/button/2/up true \n/button/3/down false \n/button/3/up true \n/button/4/down false \n/button/4/up true \n/button/5/down false \n/button/5/up true \n/button/6/down false \n/button/6/up true \n/button/7/down false \n/button/7/up true \n/button/8/down false \n/button/8/up true \n",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -122,7 +144,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 937.5, 1113.963623, 110.0, 19.0 ],
-					"text" : "/dial/11 0.425197 \n",
+					"text" : "/dial/9 0.346457 \n",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -165,7 +187,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 835.833374, 841.5, 150.0, 20.0 ],
-					"text" : "/button/1 0. \n",
+					"text" : "/button/2 0. \n",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -479,7 +501,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 574.5, 1298.963623, 110.0, 120.0 ],
-					"text" : "/up/down false \n/up/up true \n/down/released \n/down/down false \n/down/up true \n/left/down false \n/left/up true \n/right/down false \n/right/up true \n",
+					"text" : "/up/down false \n/up/up true \n/down/down false \n/down/up true \n/left/down false \n/left/up true \n/right/released \n/right/down false \n/right/up true ",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -1086,7 +1108,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 451.166687, 628.5, 150.0, 48.0 ],
-					"text" : "/dial/11 54 \n/button/1/down false \n/button/1/up true \n",
+					"text" : "/button/2 0 \n/button/1/down false \n/button/1/up true \n",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -1577,13 +1599,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.0,
 					"id" : "obj-29",
-					"linecount" : 25,
+					"linecount" : 4,
 					"maxclass" : "o.message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1522.333374, 710.0, 117.0, 323.0 ],
-					"text" : "/cc/114 \n/cc/115 \n/cc/116 \n/cc/117 \n/cc/21 \n/cc/22 \n/cc/27 \n/cc/28 \n/cc/41 \n/cc/42 \n/cc/43 \n/cc/44 \n/cc/45 \n/cc/46 \n/cc/47 \n/cc/48 \n/channel \n/note/10 \n/note/11 \n/note/12 \n/note/25 \n/note/26 \n/note/27 \n/note/28 \n/note/9 \n",
+					"patching_rect" : [ 1522.333374, 710.0, 117.0, 373.0 ],
+					"text" : "/cc/41 \n/channel \n/note/10 \n/note/9 \n",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -1636,13 +1658,13 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.0,
 					"id" : "obj-9",
-					"linecount" : 64,
+					"linecount" : 21,
 					"maxclass" : "o.message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 319.666687, 956.963684, 110.0, 816.0 ],
-					"text" : "/button/1/down false \n/button/1/up true \n/button/2/down false \n/button/2/up true \n/button/3/down false \n/button/3/up true \n/button/4/down false \n/button/4/up true \n/button/5/down false \n/button/5/up true \n/button/6/down false \n/button/6/up true \n/button/7/down false \n/button/7/up true \n/button/8/down false \n/button/8/up true \n/dial/11 0.425197 \n/button/1/released \n/button/8/released \n/button/8/pressed \n/button/1/pressed \n/button/7/released \n/button/2/released \n/button/7/pressed \n/button/2/pressed \n/dial/15 1. \n/dial/7 0.0551181 \n/dial/1 0.582677 \n/button/3/released \n/button/3/pressed \n/button/5/released \n/button/6/released \n/button/6/pressed \n/button/5/pressed \n/button/4/released \n/button/4/pressed \n/up/down false \n/up/up true \n/down/released \n/down/down false \n/down/up true \n/left/down false \n/left/up true \n/right/down false \n/right/up true \n/down 0 \n/down/pressed \n/right/released \n/right 0 \n/right/pressed \n/left/released \n/left 0 \n/left/pressed \n/up/released \n/up 0 \n/up/pressed \n/dial/10 0.291339 \n/dial/8 1. \n/dial/2 0.700787 \n/dial/9 0.464567 \n/dial/12 0.244094 \n/dial/13 0.740157 \n/dial/14 0. \n/dial/16 1. \n",
+					"patching_rect" : [ 319.666687, 956.963684, 110.0, 272.0 ],
+					"text" : "/button/1/down false \n/button/1/up true \n/button/2/released \n/button/2/down false \n/button/2/up true \n/button/3/down false \n/button/3/up true \n/button/4/down false \n/button/4/up true \n/button/5/down false \n/button/5/up true \n/button/6/down false \n/button/6/up true \n/button/7/down false \n/button/7/up true \n/button/8/down false \n/button/8/up true \n/button/2/pressed \n/dial/9 0.346457 \n/button/1/released \n/button/1/pressed \n",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -1709,7 +1731,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "FullPacket" ],
-					"patching_rect" : [ 958.333374, 508.0, 138.0, 23.0 ],
+					"patching_rect" : [ 955.0, 503.0, 138.0, 23.0 ],
 					"text" : "o.io.midi.helper.map"
 				}
 
@@ -1724,7 +1746,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 844.333374, 603.0, 133.0, 27.0 ],
-					"text" : "/dial/11 54 \n",
+					"text" : "/button/2 0 \n",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
@@ -1786,10 +1808,28 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-20", 0 ]
 				}
 
 			}
