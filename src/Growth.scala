@@ -54,6 +54,7 @@ class Growth extends MyPApplet {
     colorMode(HSB)
     oscP5
     oscP5_eeg
+    background(0)
 //    registerMethod("dispose", new { def dispose() {
 //      onDispose()
 //    }})
@@ -101,6 +102,9 @@ class Growth extends MyPApplet {
 
   object EEG {
     var frustration = 0.5f; // 0 == extremely calm, 1 = extremely frustrated
+    var meditation = 0.5f
+    var excitement = 0.5f
+    var action = 0
   }
 
   def noise(v: Vec3):Float = noise(v.x, v.y, v.z)
@@ -168,13 +172,26 @@ class Growth extends MyPApplet {
   }
 
   override def draw() {
-    //
     fill(0, pow(dials(2), 2) * 255); noStroke()
     rect(0, 0, width, height)
     drawables = drawables.filter{ drawer =>
       drawer.update()
       drawer.draw()
       drawer.isAlive
+    }
+    var repelForce = map(sq(EEG.frustration), 0, 1, 0, 7f) * dials(16)
+    for(d <- drawables;
+        d2 <- drawables if d != d2) {
+      val offset = d.pos - d2.pos
+//      val force = offset.normalize * repelForce / offset.mag2
+      val force = offset.ofMag(repelForce)
+      d.pos += force
+    }
+    var twistForce = map(sq(EEG.excitement), 0, 1, 0, 4) * dials(16)
+    for(d <- drawables) {
+      val offset = d.pos - Vec2(width/2, height/2)
+      val force = offset.rotate(PI/2).ofMag(twistForce)
+      d.pos += force
     }
     if(buttons(2)) {
       mutateScreen(Vec2(0), Vec2(width, height), Vec2(-10, -10), Vec2(width + 20, height + 20), SCREEN)
@@ -199,10 +216,10 @@ class Growth extends MyPApplet {
     if(buttons(8)) {
       background(0)
     }
-    println(frameRate)
+//    println(frameRate)
 //    textAlign(LEFT, TOP)
 //    stroke(255); fill(255)
-//    text("EEG frustration: " + EEG.frustration, 0, 0)
+//    text("EEG frustration (force " + repelForce + ": " + EEG.frustration + "\nEEG meditation: " + EEG.meditation, 0, 0)
 //    text("1 - hue of circles\n" +
 //         "2 - alpha of background\n" +
 //         "3 - size of circles\n" +
@@ -252,8 +269,6 @@ class Growth extends MyPApplet {
       val Dial = """/dial/(\d+)""".r
       val DirectionRegex = """/(up|down|left|right)""".r
 
-      val FrustrationRegex = """/eeg/frustration"""
-
       m.addrPattern() match {
         case Button(num) => {
           m.get(0).intValue() match {
@@ -273,11 +288,29 @@ class Growth extends MyPApplet {
             case e => System.err.println("Bad value " + e)
           }
         }
-        case FrustrationRegex => {
+        case "/eeg/frustration" => {
+          val args = m.arguments()
+          val firstArg = args(0).asInstanceOf[Float]
+          if(Math.random() < .01f) println("Got frustration", firstArg)
+          EEG.frustration = firstArg
+        }
+        case "/eeg/meditation" => {
           val args = m.arguments()
           val firstArg = args(0).asInstanceOf[Float]
           if(Math.random() < .01f) println("Got meditation", firstArg)
-          EEG.frustration = firstArg
+          EEG.meditation = firstArg
+        }
+        case "/eeg/excitement/short" => {
+          val args = m.arguments()
+          val firstArg = args(0).asInstanceOf[Float]
+          if(Math.random() < .01f) println("Got excitement", firstArg)
+          EEG.excitement = firstArg
+        }
+        case "/eeg/action" => {
+          val args = m.arguments()
+          val firstArg = args(0).asInstanceOf[Int]
+//          println("Got action", firstArg)
+          EEG.action = firstArg
         }
         case e => {
 //            System.err.println("Got unknown message " + e + ", arguments " + m.arguments())
