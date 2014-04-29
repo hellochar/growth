@@ -55,6 +55,9 @@ class Growth extends MyPApplet {
     oscP5
     oscP5_eeg
     background(0)
+    setDial(3, .5f)
+    setDial(4, .5f)
+    setDial(11, .5f)
 //    registerMethod("dispose", new { def dispose() {
 //      onDispose()
 //    }})
@@ -101,10 +104,9 @@ class Growth extends MyPApplet {
   }
 
   object EEG {
-    var frustration = 0.5f; // 0 == extremely calm, 1 = extremely frustrated
-    var meditation = 0.5f
-    var excitement = 0.5f
-    var action = 0
+    var frustration = 0.8f; // 0 == extremely calm, 1 = extremely frustrated
+    var meditation = 0.8f
+    var excitement = 0.8f
   }
 
   def noise(v: Vec3):Float = noise(v.x, v.y, v.z)
@@ -305,12 +307,6 @@ class Growth extends MyPApplet {
           val firstArg = args(0).asInstanceOf[Float]
           if(Math.random() < .01f) println("Got excitement", firstArg)
           EEG.excitement = firstArg
-        }
-        case "/eeg/action" => {
-          val args = m.arguments()
-          val firstArg = args(0).asInstanceOf[Int]
-//          println("Got action", firstArg)
-          EEG.action = firstArg
         }
         case e => {
 //            System.err.println("Got unknown message " + e + ", arguments " + m.arguments())
