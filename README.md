@@ -2,6 +2,9 @@ Growth
 ======
 Control a bunch of colored balls with a novation launchcontrol. For performed visuals.
 
+![example gif 1](https://raw.githubusercontent.com/hellochar/growth/master/example1.gif "Example gif 1")
+![example gif 2](https://raw.githubusercontent.com/hellochar/growth/master/example2.gif "Example gif 2")
+
 What do I do?
 ===========
 
