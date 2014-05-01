@@ -42,15 +42,15 @@ Dials
 4. speed at which balls move to the right
 5. speed at which balls jitter around the screen
 6. number of balls created when you press button 1
-7.
-8.
+7. . (none)
+8. .
 9. size of pulsing
 10. frequency of pulsing
 11. transparency of drawn balls
-12.
-13.
-14.
-15.
+12. .
+13. .
+14. .
+15. .
 16. influence of repel and twist forces (which are also controlled by EEG readings)
 
 
@@ -67,4 +67,4 @@ Xiaohan Zhang
 
 hellocharlien@hotmail.com
 
-zhangxiaohan.com
+[www.zhangxiaohan.com](http://www.zhangxiaohan.com)
